@@ -4,11 +4,19 @@ body {
     font-family:  'Montserrat', sans-serif;
 }
 
+.navbar-brand {
+    font-weight: 700;
+}
+
 .card {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: .4rem;
     min-height: 400px;
     margin: .4rem;
+
+    box-shadow: -3px 5px 5px -3px rgba(0,0,0,0.55);
+-webkit-box-shadow: -3px 5px 5px -3px rgba(0,0,0,0.55);
+-moz-box-shadow: -3px 5px 5px -3px rgba(0,0,0,0.55);
 }
 
 .card-img-top {
@@ -17,7 +25,7 @@ body {
 }
 
 body > div.container.flex > div > div > div {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -26,6 +34,18 @@ body > div.container.flex > div > div > div {
 .article_title {
     font-weight: 600;
 
+}
+
+.btn {
+    padding: .2rem .5rem;
+    background-color: black;
+    border-radius: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgb(170, 170, 170);
+    color: black;
 }
 
 

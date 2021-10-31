@@ -6,9 +6,9 @@
                         <img class="card-img-top" src="{{ news.image }}" alt="Card image cap">
                         <div class="card-body">
                             <p><i> created : {{ news.date_created }}</i></p>
-                        <h4 class="article_title">{{ news.title }}</h4>
-                        <p class="card-text">{{ news.description | truncate(200) }}</p>
-                        <a href="{{ news.link}}" target="_blank" class="btn btn-primary">Read full article</a>
+                        <h4 class="article_title">{{ news.title | truncate(50) }}</h4>
+                        <p class="card-text">{{ news.description | truncate(150) }}</p>
+                        <a href="{{ news.link}}" target="_blank" class="btn">Read full article</a>
 
                         </div>
                 </div>
