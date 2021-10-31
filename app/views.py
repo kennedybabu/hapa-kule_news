@@ -11,7 +11,7 @@ def index():
     today = date.today()
     current_date = today.strftime("%B %d, %Y")
     #getting general news
-    general_news = get_news('sports')
+    general_news = get_news('general')
     title = "Hapa Kule News - Home of your news needs"
     return render_template('index.html', title = title, general = general_news, current_date = current_date)
 
@@ -23,3 +23,11 @@ def news(news_id):
     
     title = "Hapa Kule News - Home of your news needs"
     return render_template('news.html', id = news_id, title = title)
+
+@app.route('/sports')
+def sports():
+    '''
+    Function that will return news of in the sports category
+    '''
+    sports_news = get_news('sports')
+    return render_template('sports.html', sports = sports_news)
