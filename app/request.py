@@ -51,6 +51,7 @@ def process_results(news_list):
         link = news_item['url']
 
         if image:
+            print(image)
             news_object = News(title, description, image, author, date_created, link)
             news_results_list.append(news_object)
     

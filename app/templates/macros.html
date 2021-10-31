@@ -1,7 +1,19 @@
 {% macro displayNewsList(category) %}
+    <div class="container-fluid">
+        <div class="row">
+            {% for news in category %}        
+                <div class="card my-5 col-lg-3">
+                        <img class="card-img-top" src="{{ news.image }}" alt="Card image cap">
+                        <div class="card-body">
+                            <p><i> created : {{ news.date_created }}</i></p>
+                        <h4 class="article_title">{{ news.title }}</h4>
+                        <p class="card-text">{{ news.description | truncate(200) }}</p>
+                        <a href="{{ news.link}}" target="_blank" class="btn btn-primary">Read full article</a>
 
-    {% for news in category %}
-        <li> {{ news.title }}</li>
-    {% endfor %}
+                        </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
 {% endmacro %}

@@ -1,6 +1,31 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,100&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Roboto:ital,wght@0,300;0,500;1,100&display=swap');
 
 body {
     font-family:  'Montserrat', sans-serif;
 }
+
+.card {
+    border: 1px solid black;
+    padding: .4rem;
+    min-height: 400px;
+    margin: .4rem;
+}
+
+.card-img-top {
+    max-width: 100%;
+    max-height: 50%;
+}
+
+body > div.container.flex > div > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.article_title {
+    font-weight: 600;
+
+}
+
+
