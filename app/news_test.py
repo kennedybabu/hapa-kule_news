@@ -12,7 +12,7 @@ class NewsTest(unittest.TestCase):
         set up method that will run before every test
         '''
 
-        self.new_news = News(12, 'Here we go', 'https://image.tmdb.org/t/p/w500/khsjha27hbs', 'whistleBlower', '2021-10-31')
+        self.new_news = News('Sudan coup: Three killed in protests against military takeover','Here we go', 'https://ichef.bbci.co.uk/news/1024/branded_news/184F9/production/_121277599_mediaitem121277598.jpg', 'whistleBlower', '2021-10-31', '"http://www.bbc.co.uk/news/world-africa-59103901')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_news, News))
@@ -21,10 +21,12 @@ class NewsTest(unittest.TestCase):
         '''
         Test if the News object is initialises properly
         '''
+        self.assertEqual(self.new_news.title, "Sudan coup: Three killed in protests against military takeover")
         self.assertEqual(self.new_news.description, "Here we go")
-        self.assertEqual(self.new_news.image, "https://image.tmdb.org/t/p/w500/khsjha27hbs")
+        self.assertEqual(self.new_news.image, "https://ichef.bbci.co.uk/news/1024/branded_news/184F9/production/_121277599_mediaitem121277598.jpg")
         self.assertEqual(self.new_news.author, "whistleBlower")
         self.assertEqual(self.new_news.date_created, "2021-10-31")
+        self.assertEqual(self.new_news.link, '"http://www.bbc.co.uk/news/world-africa-59103901')
 
 
 if __name__ == '__main__':
