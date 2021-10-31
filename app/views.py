@@ -54,4 +54,4 @@ def technology():
     Function that will return news in the technology category
     '''
     technology_news = get_news('technology')
-    return render_template('entertainment.html', technology = technology_news)
+    return render_template('technology.html', technology = technology_news)
