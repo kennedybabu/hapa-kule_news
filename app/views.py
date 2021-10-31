@@ -39,3 +39,19 @@ def business():
     '''
     business_news = get_news('business')
     return render_template('business.html', business = business_news)
+
+@app.route('/entertainment')
+def entertainment():
+    '''
+    Function that will return news in the entertainment category
+    '''
+    entertainment_news = get_news('entertainment')
+    return render_template('entertainment.html', entertainment = entertainment_news)
+
+@app.route('/technology')
+def technology():
+    '''
+    Function that will return news in the technology category
+    '''
+    technology_news = get_news('technology')
+    return render_template('entertainment.html', technology = technology_news)
