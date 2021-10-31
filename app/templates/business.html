@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+        
+        <div class="container flex">
+            <h4>Hello, today is {{ current_date }}</h4>
+            <hr>
+            <h2>Business News</h2>
+            <div class="pack">
+                {{ macro.displayNewsList(business) }}
+            </div>
+        </div>
+
+{% endblock %}
+    

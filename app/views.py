@@ -27,7 +27,15 @@ def news(news_id):
 @app.route('/sports')
 def sports():
     '''
-    Function that will return news of in the sports category
+    Function that will return news in the sports category
     '''
     sports_news = get_news('sports')
     return render_template('sports.html', sports = sports_news)
+
+@app.route('/business')
+def business():
+    '''
+    Function that will return news in the business category
+    '''
+    business_news = get_news('business')
+    return render_template('business.html', business = business_news)
