@@ -55,3 +55,24 @@ def process_results(news_list):
             news_results_list.append(news_object)
     
     return news_results_list
+
+def get_news_item(id):
+    get_news_details_url = base_url.format(id, api_key)
+
+    with urllib.request.urlopen(get_news_details_url)as url:
+        news_details_data = url.read()
+        news_details_response = json.loads(news_details_data)
+
+        news_object = None
+
+        if news_details_response:
+            title = news_details_response.get('title')
+            description = news_details_response.get('description')
+            image = news_details_response.get('urlToImage')
+            author = news_details_response.get('author')
+            date_created = news_details_response.get('publishedAt')
+            link = news_details_response.get('url')
+
+            news_object = News(title, description, image, author, date_created, link)
+
+    return news_object
