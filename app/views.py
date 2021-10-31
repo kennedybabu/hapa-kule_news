@@ -3,12 +3,14 @@ from app import app
 from .request import get_news
 from datetime import date, datetime
 
+today = date.today()
+
+
 @app.route('/')
 def index():
     '''
     view root page function that returns the index page and its data
     '''
-    today = date.today()
     current_date = today.strftime("%B %d, %Y")
     #getting general news
     general_news = get_news('general')
@@ -30,7 +32,8 @@ def sports():
     Function that will return news in the sports category
     '''
     sports_news = get_news('sports')
-    return render_template('sports.html', sports = sports_news)
+    title = "Hapa Kule News - Sports"
+    return render_template('sports.html', sports = sports_news, title = title)
 
 @app.route('/business')
 def business():
@@ -38,7 +41,8 @@ def business():
     Function that will return news in the business category
     '''
     business_news = get_news('business')
-    return render_template('business.html', business = business_news)
+    title = "Hapa Kule News - Business"
+    return render_template('business.html', business = business_news, title = title)
 
 @app.route('/entertainment')
 def entertainment():
@@ -46,7 +50,9 @@ def entertainment():
     Function that will return news in the entertainment category
     '''
     entertainment_news = get_news('entertainment')
-    return render_template('entertainment.html', entertainment = entertainment_news)
+    title = "Hapa Kule News - Entertainment"
+
+    return render_template('entertainment.html', entertainment = entertainment_news, title = title)
 
 @app.route('/technology')
 def technology():
@@ -54,4 +60,6 @@ def technology():
     Function that will return news in the technology category
     '''
     technology_news = get_news('technology')
-    return render_template('technology.html', technology = technology_news)
+    title = "Hapa Kule News - Technology"
+
+    return render_template('technology.html', technology = technology_news, title = title)

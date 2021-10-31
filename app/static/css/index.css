@@ -12,10 +12,17 @@ body {
     padding: .4rem;
     min-height: 400px;
     margin: .4rem;
+    translate: all ease-in .5s;
 
     box-shadow: -3px 5px 5px -3px rgba(0,0,0,0.55);
 -webkit-box-shadow: -3px 5px 5px -3px rgba(0,0,0,0.55);
 -moz-box-shadow: -3px 5px 5px -3px rgba(0,0,0,0.55);
+}
+
+.card:hover {
+    box-shadow: -1px 3px 7px -4px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 3px 7px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 3px 7px -4px rgba(0,0,0,0.75);
 }
 
 .card-img-top {
