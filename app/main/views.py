@@ -14,7 +14,7 @@ def index():
     current_date = today.strftime("%B %d, %Y")
     #getting general news
     general_news = get_news('general')
-    title = "Hapa Kule News - Home of your news needs"
+    title = "Hapa Kule News - Home of your news needs!"
     return render_template('index.html', title = title, general = general_news, current_date = current_date)
 
 @main.route('/news/<int:news_id>')
