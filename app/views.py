@@ -55,11 +55,11 @@ def entertainment():
     return render_template('entertainment.html', entertainment = entertainment_news, title = title)
 
 @app.route('/technology')
-def technology():
+def science():
     '''
     Function that will return news in the technology category
     '''
-    technology_news = get_news('technology')
-    title = "Hapa Kule News - Technology"
+    science_news = get_news('science')
+    title = "Hapa Kule News - Science"
 
-    return render_template('technology.html', technology = technology_news, title = title)
+    return render_template('science.html', science = science_news, title = title)
