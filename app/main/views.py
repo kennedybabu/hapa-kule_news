@@ -1,12 +1,12 @@
-from flask import render_template
-from app import app
-from .request import get_news
+from flask import render_template, request, redirect, url_for
+from . import main
+from ..request import get_news
 from datetime import date, datetime
 
 today = date.today()
 
 
-@app.route('/')
+@main.route('/')
 def index():
     '''
     view root page function that returns the index page and its data
@@ -17,7 +17,7 @@ def index():
     title = "Hapa Kule News - Home of your news needs"
     return render_template('index.html', title = title, general = general_news, current_date = current_date)
 
-@app.route('/news/<int:news_id>')
+@main.route('/news/<int:news_id>')
 def news(news_id):
     '''
     View news page function that returns the  news details page and its data
@@ -26,7 +26,7 @@ def news(news_id):
     title = "Hapa Kule News - Home of your news needs"
     return render_template('news.html', id = news_id, title = title)
 
-@app.route('/sports')
+@main.route('/sports')
 def sports():
     '''
     Function that will return news in the sports category
@@ -35,7 +35,7 @@ def sports():
     title = "Hapa Kule News - Sports"
     return render_template('sports.html', sports = sports_news, title = title)
 
-@app.route('/business')
+@main.route('/business')
 def business():
     '''
     Function that will return news in the business category
@@ -44,7 +44,7 @@ def business():
     title = "Hapa Kule News - Business"
     return render_template('business.html', business = business_news, title = title)
 
-@app.route('/entertainment')
+@main.route('/entertainment')
 def entertainment():
     '''
     Function that will return news in the entertainment category
@@ -54,7 +54,7 @@ def entertainment():
 
     return render_template('entertainment.html', entertainment = entertainment_news, title = title)
 
-@app.route('/technology')
+@main.route('/technology')
 def science():
     '''
     Function that will return news in the technology category

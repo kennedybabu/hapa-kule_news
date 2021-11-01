@@ -1,6 +1,5 @@
 import unittest
-from models import news
-News = news.News
+from app.models import News
 
 class NewsTest(unittest.TestCase):
     '''
@@ -28,6 +27,3 @@ class NewsTest(unittest.TestCase):
         self.assertEqual(self.new_news.date_created, "2021-10-31")
         self.assertEqual(self.new_news.link, '"http://www.bbc.co.uk/news/world-africa-59103901')
 
-
-if __name__ == '__main__':
-    unittest.main()
